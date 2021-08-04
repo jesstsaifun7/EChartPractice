@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>數據可視化面版</title>
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+  <body>
+    <!-- 頭部 -->
+    <header>
+      <h1>數據可視化 - ECharts</h1>
+      <div class="showTime"></div>
+      <!-- js當前時間 -->
+      <script>
+        var t = null;
+        t = setTimeout(time, 1000); //開始
+        function time() {
+          clearTimeout(t); //清除定時器
+          dt = new Date();
+          var y = dt.getFullYear();
+          var mt = dt.getMonth() + 1;
+          var day = dt.getDate();
+          var h = dt.getHours(); //時
+          var m = dt.getMinutes(); //分
+          var s = dt.getSeconds(); //秒
+          document.querySelector(".showTime").innerHTML =
+            "現在時間：" +
+            y +
+            "年" +
+            mt +
+            "月" +
+            day +
+            " - " +
+            h +
+            "時" +
+            m +
+            "分" +
+            s +
+            "秒";
+          t = setTimeout(time, 1000); //定時器循環運作
+        }
+      </script>
+    </header>
+
+    <!-- 頁面主體部分 -->
+    <section class="mainbox">
+      <!-- left -->
+      <div class="column">
+        <!-- 柱狀圖 -->
+        <div class="panel bar">
+          <h2>柱狀圖 - 就業行業</h2>
+          <div class="chart">img</div>
+          <div class="panel-footer"></div>
+        </div>
+        <!-- 曲線圖 -->
+        <div class="panel line">
+          <h2>
+            折線圖 - 人員變化
+            <div class="abox">
+              <a href="javascript:;">2020年</a>
+              <a href="javascript:;">2021年</a>
+            </div>
+          </h2>
+          <div class="chart">img</div>
+          <div class="panel-footer"></div>
+        </div>
+        <!-- 圓餅圖 -->
+        <div class="panel pie">
+          <h2>圓餅圖 - 年齡分佈</h2>
+          <div class="chart">img</div>
+          <div class="panel-footer"></div>
+        </div>
+      </div>
+
+      <!-- center -->
+      <div class="column">
+        <!-- 數字模塊 -->
+        <div class="no">
+          <div class="no-hd">
+            <ul>
+              <li>123456</li>
+              <li>105839</li>
+            </ul>
+          </div>
+          <div class="no-bd">
+            <ul>
+              <li>前端需求人數</li>
+              <li>市場供應人數</li>
+            </ul>
+          </div>
+        </div>
+        <!-- 地圖模塊 -->
+        <div class="map">
+          <div class="map1"></div>
+          <div class="map2"></div>
+          <div class="map3"></div>
+          <div class="chart"></div>
+        </div>
+      </div>
+
+      <!-- right -->
+      <div class="column">
+        <!-- 柱狀圖 -->
+        <div class="panel bar2">
+          <h2>柱狀圖 - 技能掌握</h2>
+          <div class="chart">img</div>
+          <div class="panel-footer"></div>
+        </div>
+        <!-- 曲線圖 -->
+        <div class="panel line2">
+          <h2>折線圖 - 播放量</h2>
+          <div class="chart">img</div>
+          <div class="panel-footer"></div>
+        </div>
+        <!-- 圓餅圖 -->
+        <div class="panel pie2">
+          <h2>圓餅圖 - 地區分佈</h2>
+          <div class="chart">img</div>
+          <div class="panel-footer"></div>
+        </div>
+      </div>
+    </section>
+
+    <script src="js/flexible.js"></script>
+    <script src="echarts-master/dist/echarts.min.js"></script>
+    <!-- <script src="js/echarts.min.js"></script> -->
+    <script src="js/jquery.js"></script>
+    <script src="js/china.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>
